@@ -26,7 +26,11 @@ public class Passenger {
         public String getAddressDetails(){
             return "Street: " + street + " City: " + city + " State: " + state;
         }
-        public void getAddressDetails(String detail){}
+        public void updateAddressDetails(String street, String city, String state){
+            this.street = street;
+            this.city = city;
+            this.state = state;
+        }
 
 
     }
@@ -43,8 +47,10 @@ public class Passenger {
         }
 
         public String getContactDetails(){return "Contact Name: " + name + " Contact PhoneNo: " + phone + "Contact Email: " + email;}
-        public void updateContactDetails(String detail){
-
+        public void updateContactDetails(String name, String phone, String email){
+                this.name = name;
+                this.phone =phone;
+                this.email = email;
         }
     }
 
@@ -52,7 +58,7 @@ public class Passenger {
     public Passenger(String addressStreet, String addressCity,
                            String addressState, String contactName, String contactPhone,
                            String contactEmail) {
-        this.id = ++idCounter;
+        this.id = ++idCounter + 100;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
     }
